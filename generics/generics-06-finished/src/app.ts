@@ -93,9 +93,15 @@ function createCourseGoal(
   courseGoal.title = title;
   courseGoal.description = description;
   courseGoal.completeUntil = date;
-  return courseGoal as CourseGoal;
+  return <CourseGoal>courseGoal;
 }
 
 const names: Readonly<string[]> = ['Max', 'Anna'];
 // names.push('Manu');
 // names.pop();
+
+function hello<T extends object, U extends keyof T>(obj:T ,frase: U): T[U] {
+  return obj[frase] ;
+}
+
+hello({name: "alex"}, "name");
