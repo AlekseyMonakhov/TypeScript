@@ -100,8 +100,8 @@ const names: Readonly<string[]> = ['Max', 'Anna'];
 // names.push('Manu');
 // names.pop();
 
-function hello<T extends object, U extends keyof T>(obj:T ,frase: U): T[U] {
-  return obj[frase] ;
+function hello<T extends object, U extends keyof T>(obj:T ,phrase: U): T[U] {
+  return obj[phrase] ;
 }
 
 hello({name: "alex"}, "name");

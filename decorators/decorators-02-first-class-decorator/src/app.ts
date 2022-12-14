@@ -12,3 +12,6 @@ class Person {
   }
 }
 
+const pers = new Person();
+
+console.log(pers);
