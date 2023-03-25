@@ -1,5 +1,5 @@
-type Admin = {
-  name: string;
+type Admin<T> = {
+  name: T;
   privileges: string[];
 };
 
@@ -7,10 +7,17 @@ type Employee = {
   name: string;
   startDate: Date;
 };
+type Test = {
+  name: string
+}
+
+function hello<T extends Employee, U extends keyof Employee>(number:T, test:U){
+  return number[test]
+}
 
 // interface ElevatedEmployee extends Employee, Admin {}
 
-type ElevatedEmployee = Admin & Employee;
+type ElevatedEmployee = Admin<string> & Employee;
 
 const e1: ElevatedEmployee = {
   name: 'Max',
@@ -30,7 +37,7 @@ function add(a: Combinable, b: Combinable) {
   return a + b;
 }
 
-type UnknownEmployee = Employee | Admin;
+type UnknownEmployee = Employee | Admin<string>;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
   console.log('Name: ' + emp.name);

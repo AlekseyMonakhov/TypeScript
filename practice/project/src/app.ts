@@ -185,6 +185,7 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement>
     dragStartHandler(event: DragEvent) {
         event.dataTransfer!.setData('text/plain',this.project.id);
         event.dataTransfer!.effectAllowed = 'move';
+        console.log('drag start')
     }
 
     dragEndHandler(_: DragEvent) {

@@ -4,7 +4,14 @@ function Logger(logString: string) {
     console.log(constructor);
   };
 }
-
+function Logger3(name:Person) {
+  console.log(name, "logger3")
+}
+function Logger2(name:Person) {
+  console.log(name, "this is name")
+}
+@Logger3
+@Logger2
 @Logger('LOGGING - PERSON')
 class Person {
   name = 'Max';

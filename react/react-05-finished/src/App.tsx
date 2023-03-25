@@ -9,14 +9,14 @@ const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
   const todoAddHandler = (text: string) => {
-    setTodos(prevTodos => [
+    setTodos((prevTodos: Todo[]) => [
       ...prevTodos,
       { id: Math.random().toString(), text: text }
     ]);
   };
 
   const todoDeleteHandler = (todoId: string) => {
-    setTodos(prevTodos => {
+    setTodos((prevTodos:Array<Todo>) => {
       return prevTodos.filter(todo => todo.id !== todoId);
     });
   };

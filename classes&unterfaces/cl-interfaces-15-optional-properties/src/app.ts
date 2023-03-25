@@ -27,6 +27,9 @@ class Person implements Greetable {
       this.name = n;
     }
   }
+  change(name:string) {
+    this.name = name;
+  }
 
   greet(phrase: string) {
     if (this.name) {
